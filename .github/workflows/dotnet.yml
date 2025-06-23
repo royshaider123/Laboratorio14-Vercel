@@ -22,10 +22,6 @@ jobs:
         dotnet-version: '8.0'
 
 
-    - name: Restore dependencies
-      run: dotnet restore
-
-
     - name: Build application
       run: dotnet build --configuration Release
 
@@ -33,7 +29,3 @@ jobs:
     - name: Publish application
       run: dotnet publish --configuration Release --output ./published
 
-
-    - name: Deploy to server (ejemplo de despliegue)
-      run: |
-        scp -r ./published username@server:/path/to/deploy
